@@ -1,13 +1,9 @@
 // index.js
 import Link from "next/link";
-
 export default function Index() {
-  return (
-    <div>
-      <h1> Index </h1>
-      <Link href="/about">
-        <a> About </a>
-      </Link>
-    </div>
-  );
+}
+export async function getServerSideProps({ res, params }) {
+    res.statusCode = 301
+    res.setHeader('Location', `https://pr0xy.cc`) // Replace <link> with your url link
+    return {props: {}}
 }
